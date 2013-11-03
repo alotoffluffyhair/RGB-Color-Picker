@@ -23,16 +23,15 @@ public class ColorChooser extends JFrame {
 	
 	public ColorChooser(){
 		super("RGB Colour Picker");
-		GridBagConstraints gbc = new GridBagConstraints();
-		panel = new JPanel(new GridBagLayout());
-		panel.setBackground(color);
 		
 		add(label1, BorderLayout.NORTH);
 		add(panel, BorderLayout.CENTER);
 		setSize(400, 400);
 		setVisible(true);
 		
-		
+		GridBagConstraints gbc = new GridBagConstraints();
+		panel = new JPanel(new GridBagLayout());
+		panel.setBackground(color);
 		gbc.fill = GridBagConstraints.HORIZONTAL;
 		gbc.weightx  = 0.5;
 		
@@ -55,6 +54,8 @@ public class ColorChooser extends JFrame {
 		g.addChangeListener(e);
 		b.addChangeListener(e);
 		
+		
+		
 		gbc.gridx =0;
 		gbc.gridy =0;
 		panel.add(r, gbc);
@@ -65,6 +66,7 @@ public class ColorChooser extends JFrame {
 		gbc.gridy =2;
 		panel.add(b,gbc);
 		
+		
 		JLabel spacetaker = new JLabel();
 		gbc.gridx =0;
 		gbc.gridy =3;
@@ -72,6 +74,7 @@ public class ColorChooser extends JFrame {
 		gbc.anchor = GridBagConstraints.PAGE_END;
 		panel.add(spacetaker,gbc);
 	}
+	
 	
 	public class event implements ChangeListener {
 
